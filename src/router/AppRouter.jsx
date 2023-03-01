@@ -29,7 +29,7 @@ const router = createBrowserRouter([
 				element: <HeroPage />,
 			},
 			{
-				path: '*',
+				path: '/',
 				element: <Navigate to={'/marvel'} />,
 			},
 		],
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '*',
-		element: <Navigate to={'/dc'} />,
+		element: <Navigate to={'login'} />,
 	},
 ]);
 
