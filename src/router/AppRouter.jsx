@@ -4,7 +4,7 @@ import {
 	RouterProvider,
 } from 'react-router-dom';
 import { LoginPage } from '../auth';
-import { MarvelPage, DcPage } from '../heroes';
+import { MarvelPage, DcPage, HeroPage, SearchPage } from '../heroes';
 import HeroesApp from '../HeroesApp';
 
 const router = createBrowserRouter([
@@ -13,31 +13,41 @@ const router = createBrowserRouter([
 		element: <HeroesApp />,
 		children: [
 			{
-				path: '/marvel',
+				path: 'marvel',
 				element: <MarvelPage />,
 			},
 			{
-				path: '/dc',
+				path: 'dc',
 				element: <DcPage />,
 			},
 			{
-				path: '/login',
-				element: <LoginPage />,
+				path: 'buscar',
+				element: <SearchPage />,
 			},
 			{
-				path: '/',
+				path: 'hero',
+				element: <HeroPage />,
+			},
+			{
+				path: '*',
 				element: <Navigate to={'/marvel'} />,
 			},
 		],
 	},
+	{
+		path: 'login',
+		element: <LoginPage />,
+	},
+	{
+		path: '*',
+		element: <Navigate to={'/dc'} />,
+	},
 ]);
 
-const AppRouter = () => {
+export const AppRouter = () => {
 	return (
 		<>
 			<RouterProvider router={router} />
 		</>
 	);
 };
-
-export default AppRouter;
