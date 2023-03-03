@@ -33,6 +33,13 @@ const Navbar = () => {
 					>
 						DC
 					</NavLink>
+
+					<NavLink
+						className='nav-item nav-link'
+						to='/Search'
+					>
+						Search
+					</NavLink>
 				</div>
 			</div>
 

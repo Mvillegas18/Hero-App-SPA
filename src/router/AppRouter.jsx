@@ -21,7 +21,7 @@ const router = createBrowserRouter([
 				element: <DcPage />,
 			},
 			{
-				path: 'buscar',
+				path: 'search',
 				element: <SearchPage />,
 			},
 			{
